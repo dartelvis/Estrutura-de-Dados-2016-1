@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1458831080 source:c:\users\vanderlei\documents\cc\estr. de dad\fila\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bib.h"
+
+1458828456 c:\users\vanderlei\documents\cc\estr. de dad\fila\bib.h
+
