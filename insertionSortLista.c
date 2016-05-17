@@ -18,17 +18,18 @@ int main()
     return 0;
 }
 
-int insertionSort(node *inc){
-    node *i, *j, *key;
+int *insertionSort(node *inc){
+    int key;
+    node *i, *j;
 
     for(j = inc->next; j!=NULL; j=j->next){
         key = j;
         i = j->prev;
-        while(i->prev!=NULL && i->val>key->val){
+        while(i->prev!=NULL && i->val>key){
             i->next->val = i->val;
             i = i->prev;
         }
         i->next = key;
     }
-    return num[0];
+    return int;
 }
