@@ -19,7 +19,7 @@ int main()
 
     printf("\n\n");
 
-    insertionSort(num, max);
+    selectionSort(num, max);
 
     for(i=0; i<max; i++)
         printf("%d\t", num[i]);
@@ -31,17 +31,20 @@ int main()
     return 0;
 }
 
-int insertionSort(int num[], int n){
-    int i, j, key;
+int selectionSort(int num[], int n){
+    int i, j, k, menor;
 
-    for(j=1; j<n; j++){
-        key = num[j];
-        i = j-1;
-        while(i>=0 && num[i]>key){
-            num[i+1] = num[i];
-            i--;
+    for(i=0; i<(n-1); i++){
+        menor = i;
+        for(j=(i+1); j<n; j++){
+            if(num[j]<num[menor])
+                menor = j;
         }
-        num[i+1] = key;
+        if(i != menor){
+            k = num[i];
+            num[i] = num[menor];
+            num[menor] = k;
+        }
     }
 
     return;

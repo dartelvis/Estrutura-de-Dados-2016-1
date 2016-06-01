@@ -19,7 +19,7 @@ int main()
 
     printf("\n\n");
 
-    insertionSort(num, max);
+    bubbleSort(num, max);
 
     for(i=0; i<max; i++)
         printf("%d\t", num[i]);
@@ -31,18 +31,20 @@ int main()
     return 0;
 }
 
-int insertionSort(int num[], int n){
-    int i, j, key;
+int bubbleSort(int num[], int n){
+    int i, j, k;
 
-    for(j=1; j<n; j++){
-        key = num[j];
-        i = j-1;
-        while(i>=0 && num[i]>key){
-            num[i+1] = num[i];
-            i--;
+    do{
+        j=0;
+        for(i=1; i<n; i++){
+            if(num[i-1]>num[i]){
+                k = num[i];
+                num[i] = num[i-1];
+                num[i-1] = k;
+                j = 1;
+            }
         }
-        num[i+1] = key;
-    }
+    }while(j);
 
     return;
 }
